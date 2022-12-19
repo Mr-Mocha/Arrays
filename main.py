@@ -1,42 +1,23 @@
-import array
+import Shoppingcartimport as s
 
-"""
-@pre - Array initialized with numbers
-@post - Double 1st element in array and display array elements
-"""
-# Passing an array as an argument
-def DoubleNumbers(array):
-    array[0] = array[0] * 2
-    for number in array:
-        print(number)
-    #return array
+# Instantiation
+myCart = s.ShoppingCart()
+while True:
+    print("Add Items...........Press 1")
+    print("Remove Items.........Press 2")
+    print("Display Items...........Press 3")
+    print("Checkout:.......Press 4")
+    print("Exit......Press 9")
+    option = int(input("Select an option"))
+    if option == 1:
+        # Access AddItems method using object
+        myCart.AddItems()
+    elif option == 3:
+        myCart.DisplayItems()
+    elif option == 2:
+        myCart.RemoveItems()
+    elif option == 4:
+        myCart.Checkout()
+    elif option == 9:
+        break
 
-# Created an array of 3 integers
-myArray = array.array('i', [1, 2, 3])
-
-# Created a list of 3 integers
-myList = []
-
-myList.append(5)
-myList.append(3)
-myList.append(7)
-
-print(len(myList))
-print(sum(myList))
-print(sum(myList) / len(myList))
-print(max(myList))
-print(min(myList))
-"""
-# Pass myArray as an argument
-newArray = DoubleNumbers(myArray)
-
-print(newArray[1])
-# Use an index to access values of the array
-print(myArray[0])
-
-# Modify an element using an index as well
-myArray[0] = 5
-
-for x in myArray:
-    print(x)
-"""
